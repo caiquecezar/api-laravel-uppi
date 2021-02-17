@@ -6,12 +6,29 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 
+define ('nome', 'Caique');
+
 class ProductController extends Controller
 {
     public function index()
     {
-        $nome = "Caique";
-        echo "Olá, {$nome}! Seu nome é " . $nome . "!\n";
+        $opa = array(
+            "01" => array(
+                'nome' => 'Caique',
+                'idade' => 27,
+                'sexo' => 'M'
+            ),
+            "02" => array(
+                'nome' => 'Ivana',
+                'idade' => 24,
+                'sexo' => 'F'
+            )
+        );
+        
+        foreach ($opa as $value => $v) {
+            echo $value . " => " . $v['nome'] . "\n";
+        }
+
         return Product::all();
     }
 
