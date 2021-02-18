@@ -12,23 +12,6 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $opa = array(
-            "01" => array(
-                'nome' => 'Caique',
-                'idade' => 27,
-                'sexo' => 'M'
-            ),
-            "02" => array(
-                'nome' => 'Ivana',
-                'idade' => 24,
-                'sexo' => 'F'
-            )
-        );
-        
-        foreach ($opa as $value => $v) {
-            echo $value . " => " . $v['nome'] . "\n";
-        }
-
         return Product::all();
     }
 
