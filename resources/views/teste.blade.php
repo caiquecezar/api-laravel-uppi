@@ -1,6 +1,19 @@
 <?php 
 
+$jsonString = '{"nome": "Caique", "idade": 27, "CPF": "974.983.384-08", "telefones": ["8738634051","87988037828"]}';
+$arrString = json_decode($jsonString);
 
+echo "<p><b>Nome: </b>". $arrString->nome ."</p>";
+echo "<p><b>Idade: </b>". $arrString->["idade"]. "</p>";
+echo "<p><b>CPF: </b>". $arrString->CPF." </p>";
+for ($i = 0; $i < count($arrString->telefones); i++) {
+    echo "<p><b>Telefone {$i}: </b>". $arrString->telefones[$i] ."</p>";
+}
+
+
+
+$nome = "nome";//$_GET["nome"];
+$email = "email"; //$_GET["email"];    
 
 
 function callArray() {
@@ -47,5 +60,6 @@ function callArray() {
             }    
         ?>
        </ul>
+       <p> <?= $nome?> : <?= $email?> </p>
     </body>
 </html>
